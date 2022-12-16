@@ -1,0 +1,3 @@
+Strict nodes :
+    1. Non-leaf nodes have exactly two children
+    2. Leaf nodes might be present at level n or (n-1)

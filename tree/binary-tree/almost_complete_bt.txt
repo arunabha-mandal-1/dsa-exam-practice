@@ -1,0 +1,4 @@
+Almost complete binary tree :
+    1. Leaf nodes are present at level n or (n-1)
+    2. At level 0 to (n-2), the nodes will have exactly two children
+    3. At level n, the children are left possible 

@@ -1,0 +1,15 @@
+Properties of Binary Trees : 
+    1. A binary tree with n nodes has exactly (n-1) edges.
+    
+    2. In a tree, everynode except the root has exactly one parent.
+
+    3. There exactly one path connecting any two nodes in a tree.
+
+    4. The maximum number of nodes in a binary tree of height k is {2^(k+1) - 1} where k>=0,
+    hence minimum height of a binary tree of n nodes is [logBase2(n+1) - 1]
+
+    5. A binary tree with n internal nodes has (n+1) external nodes.(must be extended binary tree)
+
+    6. If E and I denote the external and internal path lengths of a binary tree having n internal nodes,
+    the following identty holds E=I+2n
+

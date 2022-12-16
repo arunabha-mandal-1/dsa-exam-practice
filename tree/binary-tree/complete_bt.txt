@@ -1,0 +1,3 @@
+Complete binary tree : 
+    1. Non-leaf contains exactly two childs
+    2. Leaf nodes will be on the level n

@@ -1,0 +1,25 @@
+Tree : A tree is non-linear and a hierarchical data structure consisting of a collection of nodes such that each node of the tree stores a value and may store a list of references to other nodes (the “children”).
+
+# A tree consists of a root, and zero or more subtrees T1, T2, … , Tk such that there is an edge from the root of the tree to the root of each subtree.
+
+Root node : The topmost node of a tree which does not have any parent node is called the root node.
+
+Parent node : The node which is predecessor of a node is called parent of that node.
+
+Child node : The node which is the intermediate successor of a node is called the child node of that node.
+
+Leaf nodes/External nodes : The nodes which do not have any child nodes are called leaf nodes or external nodes.
+
+Ancestor of a node : Any predecessor nodes on the math of the root node to that node are called ancestor of the node.
+
+Descendant : Any successor node on the path from the leaf node to that node are called the descendants of the node.
+
+Siblings : Childrens of the same parent nodes are called siblings.
+
+Level of a node : The count of edges on the path from the root node to that node is considered as level of the node. The root node has level 0.
+
+Internal nodes : A node with atleast one child is called Internal Node.
+
+Neighbour of a node : Parent or child nodes of that node are called neighbours of that node.
+
+Subtree : Any node of the tree along with its descendant is call a subtree.

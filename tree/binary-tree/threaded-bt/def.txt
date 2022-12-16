@@ -1,0 +1,13 @@
+Threaded binary tree :
+    A binary tree is threaded by making all right child pointers that would normally be null point to the inorder successor of the node(if it exists), and all left child pointers that would normally be null point to the inorder predecessor of the node.
+
+    Inorder traversal of a binary tree can either be done using recursion or with the use of auxiliary stack. The idea of threaded binary tree is to make inorder traversal faster and to do it without recursion or without auxiliary stack.
+
+Single threaded binary tree:
+    Where a NULL right pointer is made to point inorder successor(if successor exists)
+
+Double threaded binary tree:
+    Where both left and right NULL pointers are made to point to inorder predecessor and inorder successor respectively. 
+
+    The predecessor threads are useful for reverse inorder traversal and postorder traversal.
+    The threads are also useful for fast accessing ancestors of a node.

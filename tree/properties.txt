@@ -1,0 +1,17 @@
+Number of edges: An edge can be defined as the connection between two nodes. If a tree has N nodes then it will have (N-1) edges. There is only one path from each node to any other node of the tree.
+
+Depth of a node: The depth of a node is defined as the length of the path from the root to that node. Each edge adds 1 unit of length to the path. So, it can also be defined as the number of edges in the path from the root of the tree to the node.
+
+Height of a node: The height of a node can be defined as the length of the longest path from the node to a leaf node of the tree.
+
+Height of the Tree: The height of a tree is the length of the longest path from the root of the tree to a leaf node of the tree.
+
+Degree of a Node: The total count of subtrees attached to that node is called the degree of the node. The degree of a leaf node must be 0. The degree of a tree is the maximum degree of a node among all the nodes in the tree.
+
+# Traversing in a tree is done by depth first search and breadth first search algorithm.
+
+# It has no loop and no circuit.
+
+# It has no self-loop.
+
+# Its hierarchical model.

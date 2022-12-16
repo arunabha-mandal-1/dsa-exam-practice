@@ -1,0 +1,37 @@
+The full form of an AVL is Adelson-Velskii and Landis.
+AVL tree is also known as height balanced binary search tree.
+
+Why AVL tree?
+-------------
+    (I)     Almost all the operations in a binary search tree are order of O(h) when height of the tree is 'h'.
+    (II)    If we do not plan our tree properly, this height can get as high as 'n' where 'n' is the number of the node in a BST(skewed tree).
+    (III)   To guarantee an upper bound of O(log(n)) for all these operations, we use balanced tree.
+
+What is an AVL tree?
+--------------------
+    (I)     Height balanced binary search trees.
+    (II)    Height difference between height of left and right subtrees for every node is less than or equal to 1.
+
+* Balance factor : height of right subtree - height of left subtree
+* Balance factor must be -1/0/1 for all nodes of an AVL tree.
+* For a node to be balanced |BF|<=1
+* We have to perform rotation to balance a BST in order make it a AVL tree.
+
+AVL trees - LL, RR, LR, RL Rotations:
+-------------------------------------
+LL=left left, RR=right right, LR=left right, RL=right left
+    Rotate Operations :
+        We can perform rotate operations to balance a binary search tree such that the newly formed tree satisfies all the properties of BST.
+        Following are two basic rotate operations:
+            (I) Left rotate wrt to a node : Node is moved towards the left
+            (I) Right rotate wrt to a node : Node is moved towards the right
+
+            tree->left_rotate->right_rorate->same_tree
+
+    Balancing an AVL tree after insertion: 
+    --------------------------------------
+        In order to balance an AVL tree after insertion, we can follow the following rules:
+            1. For LL insertion : Right rotate once wrt the first imbalanced node.
+            2. For RR insertion : Left rotate once wrt the first imbalanced node.
+            3. For LR insertion : Left rotate once wrt first imbalanced node then right rotate once wrt the 1st child of first imbalanced node.
+            3. For RL insertion : Right rotate once wrt 1st child of first imbalanced node then left rotate once wrt the first imbalanced node.

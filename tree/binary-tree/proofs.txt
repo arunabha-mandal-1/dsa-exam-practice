@@ -1,0 +1,45 @@
+Proof 1: A binary tree with n internal nodes has (n+1) external nodes.
+Answer: 
+    Let 'm' be the total number of internal nodes.
+    Let left subtree consists of 'k' internal nodes.
+    So, number of internal nodes in right subtree is (m-k-1)
+
+    External nodes in left subtree k+1
+    External nodes in subtree subtree m-k
+    ---------------------------------------
+    Total external nodes (k+1)+(m-k)=(m+1) [proved]
+
+
+Proof 2: If E and I denote the external and internal path lengths of a binary tree having n internal nodes,
+the following identty holds E=I+2n
+Answer:
+    # Path length : The sum of the lengths of the paths from the root to each node in a tree is called the path length of the tree.
+    # Internal path length(I) : The sum of the lengths of the paths from the root to each internal node in a tree is called the path length of the tree.
+    # External path length(E) : The sum of the lengths of the paths from the root to each external node in a tree is called the path length of the tree.
+
+    Let 'm' be the number of internal nodes.
+    Let 'V' be a internal node whose both children are external nodes.
+    Eliminate 'V' from the tree which is in level 'k'.
+    Number of internal nodes (m-1).
+
+    E'=I'+2(m-1)
+    I'=I-k
+    E'=E-2(k+1)+k [extra 'k' is path length of the newly added node after elimination of 'V', and in this case it must be a extended binary tree]
+
+      E'=I'+2(m-1)
+   => E-2(k+1)+k=I-k+2(m+1)
+   => E=I+2m (Proved)
+
+
+Proof 3: The maximum number of nodes in a binary tree of height k is {2^(k+1) - 1} where k>=0,
+hence minimum height of a binary tree of n nodes is [logBase2(n+1) - 1]
+Answer:
+    Let 'm' be the height of the tree.
+    So, height of two subtrees is <=(m-1)
+    Each subtree consists of n1={2^(m-1)-1} nodes.
+    Total nodes n=2*r1 + 1(root node)=2^(m+1)-1 nodes. m>=0 [Proved 1st part]
+
+    so, n=2^(m+1)-1
+      =>n+1=2^(m+1)
+      =>logBase2(n+1)=m+1
+      =>m=logBase2(n+1)-1 where m=height of the binary tree [Proved 2nd part] 
