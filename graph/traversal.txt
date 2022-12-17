@@ -1,0 +1,54 @@
+Graph traversal and graph traversal algorithms:
+-----------------------------------------------
+    Graph traversal:
+        (I)     Graph traversal refers to the process of visiting(checking and/or updating) each vertex(node) in a graph.
+        (II)    Sequence of steps known as graph traversal algorithm can be used to traverse a graph.
+        (III)   Two algorithms of grapgh traversal are:
+                            ~ DFS(Depth First Search)
+                            ~ BFS(Breadth First Search)
+
+~ In a typical graph traversal algorithm, we traverse through(or visit) all the nodes of a graph and add it to the collection of visited nodes.
+~ Exploring a vertex in a graph means visiting all the collected vertices.
+
+Breadth first search(BFS) algorithm:
+-------------------------------
+    In BFS, we start with a node and start exploring its connected nodes. The same process is repeated with all the connecting nodes untill all the nodes are visited.
+        ~ Consider a graph shown at the right.
+        ~ We can start with any source node.
+        ~ Lets start with anyone and insert it in the queue.
+        ~ Visit all the connected nodes(vertices) and enqueue them for exploration.
+
+    Input: A graph G=(V,E) and source node 's' in 'V'
+    Algorithm:
+        Marks all the nodes 'v' in V as unvisited
+        print key of s
+        Mark source node s as visited
+        enqueue(Q,s)
+        while(Q is not empty){
+            u:=dequeue(Q)
+            for each unvisited neighbour v of u{
+                print key of v
+                mark v as visited
+                enqueue(Q,v)
+            }
+        }
+
+
+Depth first search(DFS) algorithm:
+----------------------------------
+    In DFS, we start with a node and start exploring its connected nodes keeping on suspending the exploration of previous nodes.
+        ~ Start by putting any one of the graph's vertices on top of the stack.
+        ~ Take the top item of the stack and add it to the visited list.
+        ~ Create list of the vertex's adjacent nodes. Add the ones which aren't in the visited list to the top of the stack.
+        ~ Keep repeating steps 2 and 3 untill the stack is empty.
+
+    Input: A graph G=(V,E) and source node is u 
+    Algorithm:
+        DFS(G,u):
+            mark u as visited, print key of u 
+            for each v belongs to G.adj[u]{
+                if v is not visited{
+                    DFS(G,v)
+                }
+            }
+

@@ -1,0 +1,39 @@
+What is a grapgh?
+-----------------
+    Grpah is a non-linear data structure. A graph is a collection of nodes connected through edges.
+
+Formal Defination of Graph:
+---------------------------
+    A graph G=(V,E) is a collection of vertices and edges connecting these vertices.
+
+    ~ It is used to model path in a city, social network, website backlinks, internal employee network etc.
+    ~ A vertex or node is one fundamental unit/entity of which graph are formed.
+    ~ An edge is uniquely defined by its two endpoints.
+    ~ Directed edge: One way connection(fb follow)
+    ~ Undirected edge: Two way connection(fb friend)
+    ~ Directed graph: All directed edge
+    ~ Undirected graph: All undirected edges
+    ~ A graph may consist directed and undirected edges togrther. But it's rare.
+
+Indegree of Outdegree of node:
+------------------------------
+    Outdegree: Number of edges going out of the node.
+    Indegree: Number of edges coming into the node.
+
+Representations of graphs:
+--------------------------
+    (I)     Adjacency list: Mark the nodes with the list of its neighbours.
+    (II)    Adjacency matrix: 1 for an edge between i and j, 0 otherwise.
+    (III)   Edge set: Store the pair of nodes/vertices connected with an edge. E.g. {(0,1), (0,4), (1,4)}
+    (IV)    Other implementations to represent a graph also exists. For example: Compact list representation, cost adjacency list, cost adjacency matrix.
+                Edge set: 
+                    Store the pair of nodes/vertices connected with an edge. E.g. {(0,1), (0,4), (1,4)}
+                    It's not used that much bcz it makes algorithms inefficient.
+                    It's human readable but little bit problematic for computers.
+
+                Cost adjacency list:
+                    Cost is also stored along with the links.
+
+                Compact list representation:
+                    The entire graph is stored in an one dimension array. There is another one named cost compact list representation where two arrays are maintained.
+
