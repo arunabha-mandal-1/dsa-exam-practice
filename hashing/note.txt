@@ -1,0 +1,37 @@
+Hashing:
+--------
+    Hashing in the data structure is a technique of mapping a large chunk of data into small tables using a hashing function.
+
+There are different types of hashing. Few of them are 
+    1. Division
+    2. Mid Square
+    3. Folding
+
+Division: 
+    This is the most commonly used method for hashing.
+    In this method, we map a key 'k' into one the 'm' slots by taking the remainder of k divided by m i.e. the hash function is h(k)=k mod m.
+    For example, if the hash table has size m=12 and the key is k=100, then h(k)=4
+
+Mid Square:
+    Mid-square hashing is a hashing technique in which unique keys are generated.
+    In this technique, a seed value is taken and it is squared. Then, some digits from the middle are extracted.
+    Example:
+        take p=3271
+        we have q digit address
+        square(p)=10699441
+        find mid digit, that is first '9'
+        if q=3, address is 3 digits from first '9', that is '994'
+        hashing done..
+
+Folding:
+    It breaks up a key value into precise segments that are added to form a hash value.
+    Then it takes last q digits to form hash value.
+    Example:
+        take p=12345678
+        take group of q=3 digits from the last
+        sum(12+345+678)=1035
+        hash value is last q digits, i.e. 035
+        hashing done
+
+
+***The above explanation is as per class notes
