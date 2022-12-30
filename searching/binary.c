@@ -4,10 +4,11 @@
 // binary search
 void binary_search(int* arr, int size, int key);
 
-// main function
+// main function of binary search
 int main(){
     int arr[5]={45, 78, 89, 213, 4521}; // array must be sorted
     binary_search(arr, 5, 4521);
+    binary_search(arr, 5, 788);
     return 0;
 }
 

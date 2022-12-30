@@ -21,7 +21,7 @@ void reverse(Node** head);
 // isEmpty
 int isEmpty(Node* head);
 
-// Main function
+//Singly linked list Main function
 int main(){
     Node* head=NULL;
     while(1){

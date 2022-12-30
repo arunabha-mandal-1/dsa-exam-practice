@@ -25,22 +25,31 @@ void printQueue();
 // isEmpty
 bool isEmpty();
 
-// main function
+// main function of queue using linked list
 int main(){
-    enqueue(10);
-    enqueue(20);
-    enqueue(30);
+    while(1){
+        printf("\n1. Enqueue\n");
+        printf("2. Dequeue\n");
+        printf("3. Print elements\n");
+        printf("Press any other key to quit\n");
 
-    // Node* temp=front; // for debug
+        int choice = -1;
+        printf("Enter choice : ");
+        scanf("%d", &choice);
 
-    printQueue();
-
-    dequeue();
-    dequeue();
-    dequeue();
-
-    // printf("%d\n", rear->data);
-    printQueue();
+        if(choice==1){
+            printf("Enter the element you want to add : ");
+            int element = -1;
+            scanf("%d", &element);
+            enqueue(element);
+        }else if(choice==2){
+            int dequeued=dequeue();
+        }else if(choice==3){
+            printQueue();
+        }else{
+            return 0;
+        }
+    }
     return 0;
 }
 
@@ -59,6 +68,7 @@ void enqueue(int element){
         rear->next=n;
         rear=n;
     }
+    printf("%d has been added.\n", element);
 }
 
 // dequeue
@@ -77,6 +87,7 @@ int dequeue(){
         }
         free(temp);
         temp=NULL;
+        printf("%d has been removed.\n", value);
         return value;
     }
 }

@@ -24,21 +24,31 @@ bool isEmpty();
 // print stack elements in reverse order
 void printStack();
 
-// main function
+// main function of stack using linked list
 int main(){
+    while(1){
+        printf("\n1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Print elements\n");
+        printf("Press any other key to quit\n");
 
-    printStack();
-    push(10);
-    push(20);
-    push(30);
-    push(40);
-    push(50);
+        int choice = -1;
+        printf("Enter choice : ");
+        scanf("%d", &choice);
 
-    printf("First popped element %d\n", pop());
-    printf("Second popped element %d\n", pop());
-
-    printStack();
-
+        if(choice==1){
+            printf("Enter the element you want to add : ");
+            int element = -1;
+            scanf("%d", &element);
+            push(element);
+        }else if(choice==2){
+            int popped=pop();
+        }else if(choice==3){
+            printStack();
+        }else{
+            return 0;
+        }
+    }
     return 0;
 }
 
@@ -49,6 +59,7 @@ void push(int element){
     n->data=element;
     n->next=top;
     top=n;
+    printf("%d has been added.\n", element);
 }
 
 // pop
@@ -62,6 +73,7 @@ int pop(){
         top=top->next;
         free(temp);
         temp=NULL;
+        printf("%d has been removed.\n", value);
         return value;
     }
 }
@@ -77,7 +89,7 @@ void printStack(){
         printf("Stack is empty.\n");
         return;
     }
-    printf("Stack elements are : ");
+    printf("Stack elements are(top to bottom) : ");
     Node* temp=top;
     while(temp!=NULL){
         printf("%d ", temp->data);

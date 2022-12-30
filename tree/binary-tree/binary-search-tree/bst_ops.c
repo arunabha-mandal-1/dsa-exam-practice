@@ -128,17 +128,19 @@ int main(){
     p23->right=p32;
 
     // inoder traversal , expected result : 20 40 45 50 52 55 57 60 70
-    inorder_traversal(p01);
-    printf("\n");
+    // inorder_traversal(p01);
+    // printf("\n");
 
-    int searchKey=58;
-    if(search(p01, searchKey)){
-        printf("%d exists in the BST\n", searchKey);
-    }else{
-        printf("%d does not exist in the BST\n", searchKey);
-    }
+    // int searchKey=58;
+    // if(search(p01, searchKey)){
+    //     printf("%d exists in the BST\n", searchKey);
+    // }else{
+    //     printf("%d does not exist in the BST\n", searchKey);
+    // }
 
-    insertion(&p01, 60);
-    inorder_traversal(p01);
+    // insertion(&p01, 60);
+    // inorder_traversal(p01);
+
+    printf("%s\n", search(p01, 52)?"Found":"Not found");
     return 0;
 }

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define maxsize 10
+#define maxsize 5
 
 // prototype of queue
 typedef struct Queue{
@@ -28,44 +28,43 @@ bool isEmpty(Queue* q);
 // print Queue elements
 void printQueue(Queue* q);
 
-// main function
+// main function of queue using array
 int main(){
     Queue* q=(Queue*)malloc(sizeof(Queue));
     q->front=q->rear=-1;
     q->size=maxsize;
     q->array=(int*)malloc((sizeof(int))*q->size);
 
-    printQueue(q);
-    enqueue(q,10);
-    enqueue(q,20);
-    enqueue(q,30);
-    // enqueue(q,40);
-    // enqueue(q,50);
-    // enqueue(q,60);
-    // enqueue(q,70);
-    // enqueue(q,80);
-    // enqueue(q,90);
-    // enqueue(q,100);
-    // enqueue(q,110); // overflow
+    while(1){
+        printf("\n1. Enqueue\n");
+        printf("2. Dequeue\n");
+        printf("3. Print elements\n");
+        printf("Press any other key to quit\n");
 
-    // dequeue(q);
-    // enqueue(q,555);
+        int choice = -1;
+        printf("Enter choice : ");
+        scanf("%d", &choice);
 
-    dequeue(q);
-    dequeue(q);
-    enqueue(q,111);
-    // dequeue(q);
-
-    printQueue(q);
-
-    // printf("%d\n", q->array[-1]); // garbage value
+        if(choice==1){
+            printf("Enter the element you want to add : ");
+            int element = -1;
+            scanf("%d", &element);
+            enqueue(q, element);
+        }else if(choice==2){
+            int dequeued=dequeue(q);
+        }else if(choice==3){
+            printQueue(q);
+        }else{
+            return 0;
+        }
+    }
     return 0;
 }
 
 // enqueue
 void enqueue(Queue* q, int element){
     if(isFull(q)) {printf("Queue is full!\n");}
-    else {q->array[++(q->rear)]=element;}
+    else {q->array[++(q->rear)]=element; printf("%d has been added.\n", element);}
 }
 
 // dequeue
@@ -75,7 +74,9 @@ int dequeue(Queue* q){
         return INT_MIN;
     }
     else{
-        return q->array[(q->front)++];
+        int value=q->array[++(q->front)];
+        printf("%d has been removed.\n", value);
+        return value;
     }
 }
 

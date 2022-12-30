@@ -46,15 +46,13 @@ int prec(char ch);
 // final function to convert infix expression to postfix expression
 char* inToPost(char* str);
 
-// main function
+// main function of infix to postfix conversion
 int main(){
-
     char infix[100];
     printf("Enter the string : ");
     scanf("%[^\n]s", infix);
     char *postfix=inToPost(infix);
-    printf("Postfix is %s\n", postfix);
-
+    printf("Postfix expression is %s\n", postfix);
     return 0;
 }
 
@@ -144,7 +142,7 @@ char* inToPost(char* str){
                 postfix[p]=pop();
                 p++;
             }
-            if(!isEmpty() && !isOpening(stackTop())){
+            if(isEmpty() && !isOpening(stackTop())){
                 printf("Invalid Expression!\n");
                 return "!!";
             }else{
