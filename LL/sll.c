@@ -23,18 +23,51 @@ int isEmpty(Node* head);
 
 // Main function
 int main(){
-    Node* head=create(5);
-    printLL(head);
-    // delete(&head, 1);
-    // insert(&head, 6, 50);
-    reverse(&head);
-    printLL(head);
+    Node* head=NULL;
+    while(1){
+        printf("\n1. Create a linked list.\n");
+        printf("2. Insert a node.\n");
+        printf("3. Delete a node.\n");
+        printf("4. Reverse the linked list.\n");
+        printf("5. Print linked list elements.\n");
+        printf("Press any other key to quit.\n");
+
+        int choice=-1;
+        printf("Enter your choice : ");
+        scanf("%d", &choice);
+
+        if(choice==1){
+            printf("Number of elements you want to add : ");
+            int no=-1;
+            scanf("%d", &no);
+            head=create(no);
+        }else if(choice==2){
+            int element=-1, position=-1;
+            printf("Enter the element : "); scanf("%d", &element);
+            printf("Enter the position : "); scanf("%d", &position);
+            insert(&head, position, element);
+        }else if(choice==3){
+            int position=-1;
+            printf("Enter the position you want to delete a node from : ");
+            scanf("%d", &position);
+            delete(&head, position);
+        }else if(choice==4){
+            reverse(&head);
+            printf("Reversed linked list ->\n");
+            printLL(head);
+            return 0;
+        }else if(choice==5){
+            printLL(head);
+        }else{
+            return 0;
+        }
+    }
     return 0;
 }
 
 // Create a linked list with n elements
 Node* create(int n){
-    if(n==0){
+    if(n<=0){
         return NULL;
     }
     Node* head;
@@ -60,6 +93,10 @@ Node* create(int n){
 // Traverse
 void printLL(Node* head){
     Node* temp=head;
+    if(temp==NULL){
+        printf("Linked list is empty.\n");
+        return;
+    }
     printf("Elements are : ");
     while(temp!=NULL){
         printf("%d ", temp->data);
