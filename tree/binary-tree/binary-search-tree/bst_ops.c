@@ -19,7 +19,25 @@ Node* createNode(int element){
     return newNode;
 } 
 
-// Inorder traversal : Where we first visit left node then root and right nodes
+// preorder traversal
+void preorder_traversal(Node* root){
+    if(root!=NULL){
+        printf("%d ", root->data);
+        preorder_traversal(root->left);
+        preorder_traversal(root->right);
+    }
+}
+
+// postorder traversal
+void postorder_traversal(Node* root){
+    if(root!=NULL){
+        postorder_traversal(root->left);
+        postorder_traversal(root->right);
+        printf("%d ", root->data);
+    }
+}
+
+// Inorder traversal
 void inorder_traversal(Node* root){
     if(root!=NULL){
         inorder_traversal(root->left);
@@ -75,6 +93,16 @@ void insertion(Node** root, int key){
     }
 }
 
+// creation of binary search tree
+void createBST(Node** root, int n){
+    printf("Enter %d keys : ", n);
+    for(int i=0; i<n; i++){
+        int value=-1;
+        scanf("%d", &value);
+        insertion(root, value);
+    }
+}
+
 // deletion
 /*ALGORITHM: 
     case 1: leaf node >
@@ -84,63 +112,92 @@ void insertion(Node** root, int key){
     case 3: node with both child >
         in this case replace the node with inorder successor or inorder predecessor
 */
+Node* succ(Node* curr){
+    curr=curr->right;
+    while(curr!=NULL && curr->left!=NULL){
+        curr=curr->left;
+    }
+    return curr;
+}
+Node* delete(Node* root, int key){
+    if(root==NULL){
+        return root;
+    }
+    if(key<root->data){
+        root->left=delete(root->left, key);
+    }else if(key>root->data){
+        root->right=delete(root->right, key);
+    }else{
+        if(root->left=NULL){
+            Node* temp=root->right;
+            free(root);
+            return temp;
+        }else if(root->right==NULL){
+            Node* temp=root->left;
+            free(root);
+            return temp;
+        }else{
+            Node* succNode=succ(root);
+            root->data=succNode->data;
+            root->right=delete(root->right, succNode->data);
+        }
+    }
+    return root;
+}
 
-// main function
+// main function of binary search tree
 int main(){
-    /*
-                           50
-                          /  \
-                         /    \ 
-                        40     60
-                       / \    / \
-                      20 45  55  70
-                             / \
-                            52   57
-    */
+    Node* root=NULL;
+    while(1){
+        printf("\n1. Create a binary search tree\n");
+        printf("2. Insert an element in the BST\n");
+        printf("3. Delete an element from the BST\n");
+        printf("4. Inorder traversal\n");
+        printf("5. Preorder traversal\n");
+        printf("6. Postorder traversal\n");
+        printf("Press any other key to exit\n");
 
-   // pij = j-th node of level i
+        int choice = -1;
+        printf("Enter your choice : ");
+        scanf("%d", &choice);
 
-   // Creating nodes
-   Node* p01=createNode(50); // level 0(root node)
-
-   Node* p11=createNode(40); // level 1
-   Node* p12=createNode(60); // level 1
-
-   Node* p21=createNode(20); // level 2
-   Node* p22=createNode(45); // level 2
-   Node* p23=createNode(55); // level 2
-   Node* p24=createNode(70); // level 2
-
-   Node* p31=createNode(52); // level 3
-   Node* p32=createNode(57); // level 3
-
-
-    // linking nodes
-    p01->left=p11;
-    p01->right=p12;
-
-    p11->left=p21;
-    p11->right=p22;
-    p12->left=p23;
-    p12->right=p24;
-
-    p23->left=p31;
-    p23->right=p32;
-
-    // inoder traversal , expected result : 20 40 45 50 52 55 57 60 70
-    // inorder_traversal(p01);
-    // printf("\n");
-
-    // int searchKey=58;
-    // if(search(p01, searchKey)){
-    //     printf("%d exists in the BST\n", searchKey);
-    // }else{
-    //     printf("%d does not exist in the BST\n", searchKey);
-    // }
-
-    // insertion(&p01, 60);
-    // inorder_traversal(p01);
-
-    printf("%s\n", search(p01, 52)?"Found":"Not found");
+        if(choice==1){
+            root=NULL;
+            printf("How many elements you want to add? ");
+            int no=-1; scanf("%d", &no);
+            createBST(&root, no);
+        }else if(choice==2){
+            int element=-1;
+            printf("Enter the element you want to add : ");
+            scanf("%d", &element);
+            insertion(&root, element);
+        }else if(choice==3){
+            int element=-1;
+            printf("Enter the element you want to delete : ");
+            scanf("%d", &element);
+            root=delete(root, element);
+        }else if(choice==4||choice==5||choice==6){
+            if(root==NULL){
+                printf("Tree is empty!\n");
+            }else{
+                if(choice==4){
+                    printf("Inorder traversal : ");
+                    inorder_traversal(root);
+                    printf("\n");
+                }else if(choice==5){
+                    printf("Preorder traversal : ");
+                    preorder_traversal(root);
+                    printf("\n");
+                }else if(choice==6){
+                    printf("Postorder traversal : ");
+                    postorder_traversal(root);
+                    printf("\n");
+                }
+            }
+        }
+        else{
+            return 0;
+        }
+    }
     return 0;
 }
