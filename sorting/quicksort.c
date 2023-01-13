@@ -8,7 +8,7 @@ int partition(int* A, int low, int high){
     int i=low+1;
     int j=high;
     while(i<j){
-        while(A[i]<pivot){
+        while(A[i]<=pivot){
             i++;
         }
         while(A[j]>pivot){
