@@ -8,12 +8,12 @@ Graph traversal and graph traversal algorithms:
                             ~ BFS(Breadth First Search)
 
 ~ In a typical graph traversal algorithm, we traverse through(or visit) all the nodes of a graph and add it to the collection of visited nodes.
-~ Exploring a vertex in a graph means visiting all the collected vertices.
+~ Exploring a vertex in a graph means visiting all the connected vertices.
 
 Breadth first search(BFS) algorithm:
 -------------------------------
     In BFS, we start with a node and start exploring its connected nodes. The same process is repeated with all the connecting nodes untill all the nodes are visited.
-        ~ Consider a graph shown at the right.
+        ~ Consider a graph.
         ~ We can start with any source node.
         ~ Lets start with anyone and insert it in the queue.
         ~ Visit all the connected nodes(vertices) and enqueue them for exploration.

@@ -10,7 +10,7 @@ Child node : The node which is the intermediate successor of a node is called th
 
 Leaf nodes/External nodes : The nodes which do not have any child nodes are called leaf nodes or external nodes.
 
-Ancestor of a node : Any predecessor nodes on the math of the root node to that node are called ancestor of the node.
+Ancestor of a node : Any predecessor nodes on the path of the root node to that node are called ancestor of the node.
 
 Descendant : Any successor node on the path from the leaf node to that node are called the descendants of the node.
 

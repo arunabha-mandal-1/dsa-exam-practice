@@ -9,6 +9,8 @@ Height of the Tree: The height of a tree is the length of the longest path from 
 Degree of a Node: The total count of subtrees attached to that node is called the degree of the node. The degree of a leaf node must be 0. The degree of a tree is the maximum degree of a node among all the nodes in the tree.
 
 # Traversing in a tree is done by depth first search and breadth first search algorithm.
+    # Breadth first search : level order traversal
+    # Depth first search : inoder, preorder, postorder
 
 # It has no loop and no circuit.
 

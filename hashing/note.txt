@@ -9,7 +9,7 @@ There are different types of hashing. Few of them are
 
 Division: 
     This is the most commonly used method for hashing.
-    In this method, we map a key 'k' into one the 'm' slots by taking the remainder of k divided by m i.e. the hash function is h(k)=k mod m.
+    In this method, we map a key 'k' into one the 'm' slots by taking the remainder of 'k divided by m' i.e. the hash function is h(k)=(k mod m).
     For example, if the hash table has size m=12 and the key is k=100, then h(k)=4
 
 Mid Square:

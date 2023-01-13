@@ -35,6 +35,17 @@ bool isClosing(char ch);
 bool isTwoMatched(char par1, char par2);
 
 // checking if parenthesises are matching in the given expressions
+/*
+Algorithm:
+    a. create a stack.
+    b. while(end of the input is not reached){
+        1. if the character read is not a symbol to be balanced, ignore it.
+        2. if the character is an opening symbol like (,{,[, push it onto the stack.
+        3. if it's a closing symbol like ),},], then if the stack is empty report an error. otherwise pop the stack.
+        4. if the symbol popped is not the corresponding opening symbol, report an error.
+    }
+    c. at end of the input, if the stack is not empty report an error.
+*/
 bool isMatched(char* str){
     int len=strlen(str);
     int i=0;
