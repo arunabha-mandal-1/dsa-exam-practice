@@ -1,0 +1,28 @@
+QUICK SORT ALGORITHM : 
+    Partition : 
+        step1 : Define i as the (low+1) index, which is the index of the second element of the subarray, and j as the high index, which is the index of the last element of the subarray.
+        step2 : Set the pivot as the element at the low index i since that is the second index of the unsorted subarray.
+        step3 : Increase i by 1 until you reach an element greater than or equal to the pivot element.
+        step4 : Decrease j by 1 until you reach an element smaller than the pivot element.
+        step5 : Having fixed the values of i and j, interchange the elements at indices i and j.
+        step6 : Repeat steps 3, 4, and 5 until j becomes less than or equal to i.
+        step7 : Finally, swap the pivot element and the element at the index.
+        step8 : Return partitioning index.
+        This is the partitioning algorithm. Every time you call a partition, the pivot element gets its final position. 
+
+    Sorting : 
+        step1 : Partition the array using partitioning algorithm.
+        step2 : Quicksort left partition recursively.
+        step3 : Quicksort right partition recursively.
+
+QUICK SORT PSEUDOCODE : 
+    int partition(arr, low, high)
+        pivot = arr[low]
+        set i=low+1 and j=high
+        while i<j
+            while arr[i]<=pivot, i++
+            while arr[j]>pivot, j--
+            if i<j, swap ith and jth element in the array
+        swap jth element and value at 'low' index
+        return j
+        
