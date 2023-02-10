@@ -1,0 +1,36 @@
+MERGESORT ALGORITHM : 
+    Merege : 
+        step1 : Define i as low, j as mid+1 and k(it is used to track auxiliary array) as 0
+        step2 : Declare an auxiliary array and allocate space for (high-low+1) elements
+        step3 : If element at ith index is less than element at jth index, copy ith element to auxiliary array and move i,k
+        step4 : If element at ith index is greater than or equal to element at jth index, copy jth element to auxiliary array and move j,k
+        step5 : Repeat step3 and step4 while i<=mid and j<=high
+        step6 : While i<=mid, copy ith element to auxiliary array and move i,k
+        step7 : While j<=high, copy jth element to auxiliary array and move j.k
+        step8 : Copy all the elements from auxiliary array to original array one by one in the place of existing ones
+
+    Sorting :
+        step1 : Find the middle positon of the array.
+        step2 : Mergesort left portion of middle(including middle element) recursively.
+        step3 : Mergesort right portion of middle recursively.
+        step4 : Merge two sorting portion using merging algorithm.
+
+MERGESORT PSEUDOCODE : 
+    void merge(arr, low, high, mid)
+        set i=low, j=mid+1, k=0
+        allocate space for an auxiliary array say 'auxarr'
+        while i<=mid and j<=high
+            if arr[i]<arr[j]
+                auxarr[k]=arr[i]
+                i++,k++
+            else
+                auxarr[k]=arr[j]
+                j++,k+++
+        while i<=mid
+            auxarr[k]=arr[i]
+            i++,k++
+        while j<=high
+            auxarr[k]=arr[j]
+            j++,k++
+        copy all the elements from auxarr to arr one by one in the place of existing ones
+       
