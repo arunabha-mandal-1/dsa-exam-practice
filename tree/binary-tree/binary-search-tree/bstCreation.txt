@@ -1,0 +1,11 @@
+BST creation : 
+    Algorithm : 
+        step1 : Take inputs of number of elements to be added.
+        step2 : Run a for loop to take n values from the user and insert in at its correct position using insertion algorithm.
+
+    Pseudoce : 
+        void createBST(root, n)
+            take n from user
+            for 0<=i<n
+                take 'value' from user
+                insertion(root, value)
